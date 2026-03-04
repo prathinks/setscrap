@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scrap Products</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f6f7;
+  padding: 40px 8%;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+}
+
+/* ================= CONTAINER ================= */
+
+.auction-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.auction-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.auction-card:hover{
+  transform: translateY(-4px);
+}
+
+.auction-card img {
+  width: 260px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.auction-details {
+  padding: 25px;
+  flex: 1;
+}
+
+.auction-details h3{
+  margin-bottom:10px;
+  font-size:22px;
+}
+
+.auction-details p{
+  margin:6px 0;
+  color:#555;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #0d9646;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition:0.3s;
+  min-height:44px;
+}
+
+button:hover {
+  background: #0bb85e;
+}
+
+/* ================= SIDE POPUP ================= */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 420px;
+  height: 100%;
+  background: linear-gradient(180deg,#0d9646,#0bb85e);
+  transition: 0.4s ease;
+  z-index: 999;
+  padding: 30px;
+  color: white;
+  box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+  overflow-y:auto;
+}
+
+.overlay.active {
+  right: 0;
+}
+
+.overlay h2 {
+  margin-bottom: 20px;
+}
+
+.overlay form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.overlay input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.success-msg {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 15px;
+  display: none;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media(max-width:900px){
+
+  body{
+    padding:30px 6%;
+  }
+
+  .auction-card{
+    flex-direction: column;
+  }
+
+  .auction-card img{
+    width:100%;
+    height:240px;
+  }
+
+  .bottom-row{
+    flex-direction:column;
+    gap:12px;
+    align-items:flex-start;
+  }
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+  body{
+    padding:20px 4%;
+  }
+
+  .auction-details{
+    padding:18px;
+  }
+
+  .auction-details h3{
+    font-size:18px;
+  }
+
+  .overlay{
+    width:100%;
+  }
+
+  button{
+    width:100%;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="auction-container">
+
+  <!-- HDPE -->
+  <div class="auction-card">
+    <img src="https://img3.exportersindia.com/product_images/bc-full/2025/6/14815129/plastic-hd-1750937858_8161791_2534460.jpg" loading="lazy">
+    <div class="auction-details">
+      <h3>HDPE Scrap</h3>
+      <div>Scrap Name - Blue Drum | Type : Shredded | Weight - 8 Tonnes</div>
+      <p>Location : Solapur</p>
+      <div class="bottom-row">
+        <span>✅ Available</span>
+        <button onclick="openForm('HDPE Scrap')">Buy / Get Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PET -->
+  <div class="auction-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFWghP0uFTyfZfqplUrE5jkDgi1LtccnBZFQ&s" loading="lazy">
+    <div class="auction-details">
+      <h3>PET Scrap</h3>
+      <div>Scrap Name - Bottles | Type : Shredded | Weight: 5 Tonnes</div>
+      <p>Location : Latur</p>
+      <div class="bottom-row">
+        <span>✅ Available</span>
+        <button onclick="openForm('PET Scrap')">Buy / Get Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LDPE -->
+  <div class="auction-card">
+    <img src="https://img500.exportersindia.com/product_images/bc-500/dir_189/5640963/ldpe-plastic-film-scrap-1529580880-4003155.jpeg" loading="lazy">
+    <div class="auction-details">
+      <h3>LDPE Scrap</h3>
+      <div>Scrap Name - Bags | Type : Shredded | Weight : 4 Tonnes</div>
+      <p>Location : Nanded</p>
+      <div class="bottom-row">
+        <span>✅ Available</span>
+        <button onclick="openForm('LDPE Scrap')">Buy / Get Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PP -->
+  <div class="auction-card">
+    <img src="https://5.imimg.com/data5/SELLER/Default/2023/11/360287129/DE/BE/JD/202253803/pp-500x500.jpg" loading="lazy">
+    <div class="auction-details">
+      <h3>PP Scrap</h3>
+      <div>Scrap Name - Dashboards | Type : Shredded | Weight : 7 Tonnes</div>
+      <p>Location : Latur</p>
+      <div class="bottom-row">
+        <span>✅ Available</span>
+        <button onclick="openForm('PP Scrap')">Buy / Get Quote</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SIDE POPUP -->
+<div class="overlay" id="popupForm">
+  <div class="close-btn" onclick="closeForm()">✕</div>
+  <h2>Tell Us Your Requirements</h2>
+
+  <form id="quoteForm">
+    <input type="text" id="productInput" readonly>
+    <input type="text" id="userName" placeholder="Your Name" required>
+    <input type="text" id="quantity" placeholder="Quantity (MT)" required>
+    <input type="tel" id="phone" placeholder="Mobile Number" required>
+    <input type="text" id="city" placeholder="City">
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="success-msg" id="successMessage">
+    Request submitted successfully, our team will contact you shortly.
+  </div>
+</div>
+
+<script>
+function openForm(productName) {
+  document.getElementById("popupForm").classList.add("active");
+  document.getElementById("productInput").value = productName;
+}
+
+function closeForm() {
+  document.getElementById("popupForm").classList.remove("active");
+}
+</script>
+<script type="module" src="backend.js"></script>
+</body>
+</html>

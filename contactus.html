@@ -1,0 +1,152 @@
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    
+    <h2>Contact Us</h2>
+    <p class="contact-subtext">
+      Have questions about buying or selling scrap? Reach out to us. 📞 +91 91728 25756 / +91 9067340097
+    </p>
+
+    <form id="contactForm">
+      
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+      
+      <input type="tel" id="number" name="number" placeholder="Your Number" required />
+      
+      <textarea id="message" name="message" placeholder="Tell us your requirements..." rows="5" required></textarea>
+      
+      <button type="submit">Send Message</button>
+      
+      <!-- Success Message -->
+      <div class="success-message" id="successMsg">
+        Thankyou for connecting, we will call you soon.
+      </div>
+
+    </form>
+
+  </div>
+</section>
+
+<style>
+
+/* Prevent overflow issues */
+* {
+  box-sizing: border-box;
+}
+
+.contact-section {
+  background: #f9fafc;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 120%;
+}
+
+.contact-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.contact-subtext {
+  margin-bottom: 30px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Form Styling */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  outline: none;
+  border-color: #12b839;
+  box-shadow: 0 0 0 2px rgba(18,184,57,0.15);
+}
+
+#contactForm button {
+  width: 100%;
+  padding: 14px;
+  background-color: #12b839;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#contactForm button:hover {
+  background-color: #0d9646;
+}
+
+/* Success Message */
+.success-message {
+  display: none;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #02c862;
+  color: #065f46;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Tablet and Desktop Layout */
+@media (min-width: 800px) {
+
+  .contact-section {
+    padding: 100px 30px;
+  }
+
+  #contactForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  .contact-section h2 {
+    font-size: 36px;
+  }
+
+  .contact-subtext {
+    font-size: 18px;
+  }
+}
+
+/* Large Desktop Optimization */
+@media (min-width: 1200px) {
+  .contact-container {
+    max-width: 1000px;
+  }
+}
+
+</style>
+
+<script>
+
+
+</script>
+<script type="module" src="contacbackend.js"></script>
